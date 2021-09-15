@@ -1,0 +1,215 @@
+@charset "utf-8";
+
+body {font-size: 1.4rem;}
+
+/*common*/
+.inner {padding: 0 1.5%;}
+.btnMore {
+    width: 130px;
+    height: 40px;
+    line-height: 40px;
+    padding: 0;
+    margin: 25px 0 0;    
+}
+ .btnMore i {margin-left: 20px;}
+
+
+/*heder*/
+header {height: 70px;}
+header .logo {padding: 15px; width: 110px; box-sizing: border-box;}
+
+/*header gnb1*/
+header .gnb .btn-close {
+    position: absolute;
+    top: 20px; right: 20px;
+    font-size: 2.4rem;
+    color: #111;
+    z-index: 100;
+    display: block;
+}
+header .gnb {
+    width: 80vw; 
+    height: calc(100vh - 70px);
+    top: 70px; right: -100%; 
+    background: #fff;
+    transition: all 0.4s;
+}
+header .gnb.on {right: 0;} /*.gnb에 on 클래스가 붙으면 right의 위치가 0가 되면서 화면 오른쪽으로 슬라이드되며 나타남.*/
+
+header .gnb .gnb1 {margin-top: 50px;}
+header .gnb .gnb1 > li {float: none; width: 100%;}
+header .gnb .gnb1 > li > a {
+    height: 40px;
+    line-height: 40px;
+    text-align: left;
+    padding: 10px 20px;
+    font-size: 1.6rem;
+    border-bottom: 1px solid #ddd;
+}
+header .gnb .gnb1 > li:nth-child(4) > a,
+header .gnb .gnb1 > li:nth-child(5) > a {padding: 10px 20px;}
+
+header .gnb .gnb1 > li > a:hover {color: #50b56e; font-weight: 600}
+
+/*header>gnb-2depth*/
+header .gnb .gnb-2depth {
+    position: absolute;
+    top: 87px; left: 50%;
+    width: 90%;
+    transform: translateX(-50%);
+    background: #fff;
+    border: 1px solid #333;
+    padding: 25px 20px;
+    box-sizing: border-box;
+    display: none;
+}
+header .gnb .gnb-2depth li + li {margin-top: 20px;}
+header .gnb .gnb1 > li:hover .gnb-2depth {display: none;} /*스크립트로 작성할 예정*/
+
+/*header-topNav*/
+header .topNav {top: 50%; right: 1.5%;}
+header .topNav li {margin-left: 30px;}
+header .topNav li > a {
+    font-size: 2rem;
+    font-weight: 300;
+    color: #111;
+}
+header .topNav li:last-child > a {font-size: 1.4rem;}
+header .topNav i:last-child {margin-left: 8px;}
+
+/*mainVisual 영역 공통*/
+.mainTitle {width: 90%; top: 60%}
+.mainTitle .topLine,
+.mainTitle .botLine {
+    width: 60%;
+    height: 8px;
+}
+.mainTitle .topLine:before, 
+.mainTitle .topLine:after,
+.mainTitle .botLine:before, 
+.mainTitle .botLine:after {
+    width: 8px;
+    height: 20px;
+}
+.mainTitle .topLine:before {top: 8px; left: 0;}
+.mainTitle .topLine:after {top: 8px; right: 0;}
+.mainTitle .botLine:before {bottom: 8px; left: 0;}
+.mainTitle .botLine:after {bottom: 8px; right: 0;}
+
+.mainTitle .bTitle {
+    margin: 40px 0;
+    font-size: 3.4rem;
+}
+.mainTitle .bTitle span {font-size: 3.6rem;}
+.mainTitle .sTitle {
+    margin-top: 25px; 
+    font-size: 1.6rem;
+}
+#mainVisual01 {height: 60vh;}
+
+/*contents 영역 공통*/
+section .contImg {width: 100%; height: 40vh;}
+section .contImg .imgText {
+    right: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 1.2rem;
+    letter-spacing: -0.5px;
+}
+section .contArea {
+    width: 100%;
+    height: auto; /*width나 height가 요소의 콘텐츠크기만큼 차지하는 값*/
+    padding: 0;
+}
+section .textGroup .sText {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 1.6rem;
+}
+section .textGroup h2 {
+    font-size: 4rem;
+    line-height: 1;
+    margin-bottom: 20px;
+}
+section .textGroup .text {
+    margin-bottom: 15px;
+    font-size: 1.6rem; 
+}
+section .textGroup .btnMore {padding: 0 20px;}
+section .textGroup .btnMore i {margin-left: 25px;}
+
+/*story*/
+#story {padding: 40px 20px 20px; box-sizing: border-box;}
+#story .contArea {float: none;}
+#story .contImg {float: none;}
+
+/*introduction*/
+#introduction {padding: 20px 20px 30px; box-sizing: border-box;}
+#introduction .contArea {float: none;}
+#introduction .contImg {
+    float: none;
+    background-image: url(../img/main_section_bg03.jpg);
+}
+
+/*mainvisual02*/
+#mainVisual02 {height: 60vh;}
+#mainVisual02 .mainTitle {top: 50%; width: 90%;}
+#mainVisual02 .btnMore {margin: 25px auto 0;}
+
+
+/*product*/
+#product .inner {padding: 30px 20px; box-sizing: border-box;}
+#product h2 {font-size: 3.6rem;}
+#product .productList {overflow: hidden; margin: 30px 0}
+#product .productList li {
+    width: 50%;
+    height: 280px;
+    padding: 0 10px;
+    margin-left: 0;
+    margin-bottom: 30px;
+    box-sizing: border-box;
+}
+#product .productList .proText {
+    margin-top: 30px;
+    text-align: left;
+}
+#product .productList .proText .pTitle {font-size: 1.6rem;}
+#product .productList li:nth-child(1) {margin-top: 0;}
+#product .productList li:nth-child(3) {margin-top: 0;}
+#product .productList li:nth-child(4) {margin-top: 0;}
+#product .productList li:nth-child(6) {margin-top: 0;}
+
+#product .btnMore {margin: 40px auto 0;}
+
+/*footer*/
+footer {
+    position: relative; 
+    padding: 20px 0; 
+    height: 300px;
+    font-size: 1.3rem; 
+    line-height: 1.3;
+    text-align: center;
+}
+footer .fTop {padding-bottom: 15px;}
+footer .fTop .fNav {overflow: hidden; float: none; width: 90%; margin: 0 auto;}
+footer .fTop .fNav li {width: 50%; margin-bottom: 5px;}
+footer .fTop .fNav li > a {padding: 0;}
+footer .fTop .sns {
+    position: absolute; 
+    bottom: 20px; left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    float: none;
+}
+footer .family {display: none;}
+
+
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+    
+}
+
+
+
+
+
+
