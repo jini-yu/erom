@@ -98,7 +98,24 @@ header .gnb .gnb-2depth {
     box-sizing: border-box;
     display: none;
 }
-header .gnb .gnb-2depth li + li {margin-top: 20px;}
+header .gnb .gnb-2depth li:hover {
+    font-weight: 600;
+    color: #00ac4f;
+}
+header .gnb .gnb-2depth li + li {
+    margin-top: 20px;
+}
+header .gnb .gnb-2depth  li::after {
+    display: block;
+    content: '';
+    border-bottom: 3px solid #00ac4f;
+    transform: scaleX(0);
+    transition: transform 250ms ease-in-out;
+}
+header .gnb .gnb-2depth  li:hover::after {
+    transform: scaleX(1);
+    
+}
 header .gnb .gnb1 > li:hover .gnb-2depth {display: block;}
 /*모바일버튼닫기*/
 header .gnb .btn-close {display: none;}
@@ -170,6 +187,7 @@ header .topNav li:hover .lang {display: block;}
     font-size: 60px;
     font-weight: 400;
     line-height: 1.2; 
+    opacity: 0;
 }
 .mainTitle .bTitle span {
     display: block; 
@@ -181,6 +199,7 @@ header .topNav li:hover .lang {display: block;}
     margin-top: 40px; 
     font-size: 1.8rem;
     color: rgba(255,255,255,0.8);
+    opacity: 0;
 }
 
 /*mainViosual01*/
@@ -191,11 +210,21 @@ header .topNav li:hover .lang {display: block;}
 }
 
 /*contents 영역 공통*/
+      .sa-scaleup {
+        transform: scale(.5);
+      }
+
+      .contImg.show {
+        opacity: 1;
+        transform: none;
+      }
+
 section .contImg {
     position: relative;
     width: 50%;
     height: 100vh;
     background: url(../img/main_section_bg02.jpg) no-repeat center/cover;
+    transition: all 1s ease;
 }
 section .contImg .imgText {
     position: absolute;
@@ -232,6 +261,12 @@ section .textGroup .btnMore {
     color: #fff;
     font-weight: 600;
 }
+section .textGroup .btnMore:hover {
+    background: #fff;
+    color: #333333;
+    border: 3px solid #00ac4f;
+    transition: all .5s;
+}
 section .textGroup .btnMore i {margin-left: 50px;}
 
 /*story*/
@@ -252,10 +287,21 @@ section .textGroup .btnMore i {margin-left: 50px;}
     background: url(../img/main_section_bg04.jpg) no-repeat center/cover;
 }
 #mainVisual02 .mainTitle {width: 28%;}
-#mainVisual02 .mainTitle .bTitle {color: #fff;}
+#mainVisual02 .mainTitle .bTitle {
+    color: #fff;
+    opacity: 0;
+}
 #mainVisual02 .mainTitle > span {font-weight: 500; letter-spacing: 20px;}
-#mainVisual02 .mainTitle .sTitle {font-size: 2rem}
-
+#mainVisual02 .mainTitle .sTitle {
+    font-size: 2rem;
+    opacity: 0;
+}
+#mainVisual02 .mainTitle .btnMore:hover {
+    background: #09793c;
+    font-weight: 500;
+    transition: all .5s;
+    opacity: 0.8;
+}
 
 /*product*/
 #product .inner {padding: 150px 0; text-align: center;}
